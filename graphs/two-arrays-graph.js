@@ -26,5 +26,16 @@ const findAdjacentNodes = function (node) {
   return listOfAdjacentNodes
 }
 
+// FIND CONNECTION BETWEEN TWO NODES (EDGE)
+const isConnected = function (node1, node2) {
+  // are both nodes in sub array?
+  // stop when found
+  return edges.some((edge) => {
+    return edge.indexOf(node1) > -1 && edge.indexOf(node2) > -1
+  })
+}
+
 console.log('find adjacent node', findAdjacentNodes('A'))
+
+console.log('are 2 nodes connected', isConnected('A', 'E'))
 
