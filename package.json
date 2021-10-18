@@ -1,0 +1,11 @@
+{
+  "name": "treestriesgraphs",
+  "version": "1.0.0",
+  "description": "Implimentations of Graphs Tries and Tres",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
