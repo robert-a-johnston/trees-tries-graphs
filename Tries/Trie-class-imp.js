@@ -80,7 +80,7 @@ trieTree.insert('asdfasdf', 5)
 trieTree.insert('cdfasdfas', 23)
 trieTree.insert('cdfzsvljsdf', 42)
 
-let answer = trieTree.searchNode('asdfasdf')
-console.log(answer.value)
-answer = trieTree.startsWith('cdf')
-console.log(answer)
+let answer = trieTree.searchNode('asdfasdf') 
+console.log(answer.value) // 5
+answer = trieTree.startsWith('cdf') 
+console.log(answer) // true

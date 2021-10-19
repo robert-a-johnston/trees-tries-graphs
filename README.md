@@ -87,6 +87,7 @@ simple undirected graph
 
 # TRIE NOTES  
 [Trie Article](https://learnersbucket.com/tutorials/data-structures/trie-data-structure-in-javascript/)  
+[Trie Video](https://www.youtube.com/watch?v=Sc80DNJfQs0)
 - Trie (or digital tree or prefix tree)
   - ordered tree data structure used to store a dynamic set or associative array where the keys are usually strings.
   - nodes of the tree store the entire alphabet and string/words can be reTRIEved by traversing down a branch path
@@ -109,3 +110,5 @@ simple undirected graph
 ### SPACE COMPLEXITY
 - dependent on number of nodes(n) and number of references(k)
 - O(n*k)
+
+# TREE NOTES
