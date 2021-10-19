@@ -9,6 +9,15 @@ class Node {
 
   connect(node){
     this.edgesList.push(node)
+    node.edgesList.push(this)
+  }
+
+  getAdjacentNodes(){
+    return this.edgesList.map(edge => edge.value)
+  }
+
+  isConnected(node){
+    return this.edgesList.map(edge => edge.value).indexOf(node.value) > -1
   }
 }
 
@@ -32,5 +41,21 @@ const nodeE = new Node ('E')
 
 const graph = new Graph([nodeA, nodeB, nodeC, nodeD, nodeE])
 
-console.log('nodeA', nodeA)
-console.log('graph', graph)
+nodeA.connect(nodeB)
+nodeA.connect(nodeD)
+nodeB.connect(nodeC)
+nodeC.connect(nodeD)
+nodeC.connect(nodeE)
+nodeD.connect(nodeE)
+
+// for(let node of graph.nodes){
+//   console.log(`node ${node.value}`)
+//   for(let connectedNode of node.edgesList){
+//     console.log(`Node ${node.value} is connected to ${connectedNode.value}`)
+//   }
+// }
+
+// console.log(nodeA.getAdjacentNodes())
+console.log(nodeA.isConnected(nodeB))
+// console.log('nodeA', nodeA)
+// console.log('graph', graph)
