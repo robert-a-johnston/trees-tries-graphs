@@ -47,3 +47,13 @@ class Trie {
   }
 
 }
+
+const trieTree = new Trie()
+trieTree.insert('asdfasdf')
+trieTree.insert('cdfasdfas')
+trieTree.insert('cdfzsvljsdf')
+
+let answer = trieTree.contains('asdfasdf') 
+console.log(answer) // true
+answer = trieTree.startsWithPrefix('cdf') 
+console.log(answer) // true
