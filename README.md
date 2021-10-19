@@ -86,4 +86,26 @@ simple undirected graph
 - maximum number of edges = n*(n-1)/2
 
 # TRIE NOTES  
-[Trie YouTube Vid](https://www.youtube.com/watch?v=Sc80DNJfQs0)  (~25 min)
+[Trie Article](https://learnersbucket.com/tutorials/data-structures/trie-data-structure-in-javascript/)  
+- Trie (or digital tree or prefix tree)
+  - ordered tree data structure used to store a dynamic set or associative array where the keys are usually strings.
+  - nodes of the tree store the entire alphabet and string/words can be reTRIEved by traversing down a branch path
+  - has an empty root note with links to other nodes
+  - structure is a set of linked nodes connecting back to empty root node
+  - usually uses as autocomplete feature of search
+### LIST OF OPERATIONS PERFORMED ON TRIE
+- insert(word) - adds word
+- remove(word) - removes a word
+- contains(word) - checks if Trie has the given word
+- find(prefix) - returns all the words with a given prefix
+
+### TIME COMPLEXITY
+- is dependent on the length of the word being searched for, inserted or deleted(a), and the number of words (n)  
+- O(a*n)
+
+- for finding a given prefix is dependent on length of prefix (p)
+- O(p+n)
+
+### SPACE COMPLEXITY
+- dependent on number of nodes(n) and number of references(k)
+- O(n*k)
