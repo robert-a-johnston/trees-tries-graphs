@@ -122,3 +122,5 @@ simple undirected graph
   |Tree Type|Search|Insertion|Deletion|
   |---------|------|---------|--------|
   |BST|O(log(n))|O(log(n))|O(log(n))|
+
+# HEAP NOTES
