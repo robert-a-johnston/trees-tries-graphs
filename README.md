@@ -112,3 +112,9 @@ simple undirected graph
 - O(n*k)
 
 # TREE NOTES
+### BINARY SEARCH TREE (BST)
+- Properties
+  - left subtree of a node has nodes with keys < the node's key
+  - right subtree of a node has nodes with keys > the node's key
+  - left and right subtree each must also be a binary search tree
+  - no duplicate nodes
