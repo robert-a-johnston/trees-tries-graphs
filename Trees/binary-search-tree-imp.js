@@ -12,8 +12,7 @@ class Node
 // Binary Search tree class
 class BinarySearchTree
 {
-	constructor()
-	{
+	constructor(){
 		// root of a binary search tree
 		this.root = null
 	}
@@ -22,11 +21,10 @@ class BinarySearchTree
 	// insert(data)
 // helper method which creates a new node to
 // be inserted and calls insertNode
-	insert(data)
-	{
+	insert(data){
 		// Creating a node and initialising
 		// with data
-		var newNode = new Node(data)
+		const newNode = new Node(data)
 						
 		// root is null then node will
 		// be added to the tree and made root.
@@ -42,8 +40,7 @@ class BinarySearchTree
 	// Method to insert a node in a tree
 	// it moves over the tree to find the location
 	// to insert a node with a given data
-	insertNode(node, newNode)
-	{
+	insertNode(node, newNode){
 		// if the data is less than the node
 		// data move left of the tree
 		if(newNode.data < node.data)
@@ -77,8 +74,7 @@ class BinarySearchTree
 	// remove(data)
 	// helper method that calls the
 	// removeNode with a given data
-	remove(data)
-	{
+	remove(data){
 		// root is re-initialized with
 		// root of a modified tree.
 		this.root = this.removeNode(this.root, data)
@@ -88,8 +84,7 @@ class BinarySearchTree
 	// given data
 	// it recur over the tree to find the
 	// data and removes it
-	removeNode(node, key)
-	{
+	removeNode(node, key){
 			
 		// if the root is null then tree is
 		// empty
@@ -139,7 +134,7 @@ class BinarySearchTree
 			// Deleting node with two children
 			// minimum node of the right subtree
 			// is stored in aux
-			var aux = this.findMinNode(node.right)
+			const aux = this.findMinNode(node.right)
 			node.data = aux.data
 
 			node.right = this.removeNode(node.right, aux.data)
@@ -153,8 +148,7 @@ class BinarySearchTree
 	// findMinNode()
 	// finds the minimum node in tree
 // searching starts from given node
-	findMinNode(node)
-	{
+	findMinNode(node){
 		// if left of a node is null
 		// then it must be minimum node
 		if(node.left === null)
@@ -163,44 +157,59 @@ class BinarySearchTree
 			return this.findMinNode(node.left)
 	}
 
+	// find maxNode
+	findMaxNode() {
+		let current = this.root
+		while(current.right !== null) {
+			current = current.right
+		}
+		return current.data
+	}
+
+	displayMinNode(){
+		let current = this.root
+		while(current.left !== null){
+			current = current.left
+		}
+		return current.data
+	}
+
 	// getRootNode()
 	// returns root of the tree
 	getRootNode(){
 		return this.root
 	}
 
-	// inorder(node)
-		// Performs inorder traversal of a tree
-	inorder(node)
-	{
+	// inOrder(node)
+		// Performs inOrder traversal of a tree
+	inOrder(node){
 		if(node !== null)
 		{
-			this.inorder(node.left)
+			this.inOrder(node.left)
 			console.log(node.data)
-			this.inorder(node.right)
+			this.inOrder(node.right)
 		}
 	}
 
-	// preorder(node)
-	// Performs preorder traversal of a tree
-	preorder(node)
-	{
+	// preOrder(node)
+	// Performs preOrder traversal of a tree
+	preOrder(node){
 		if(node !== null)
 		{
 			console.log(node.data)
-			this.preorder(node.left)
-			this.preorder(node.right)
+			this.preOrder(node.left)
+			this.preOrder(node.right)
 		}
 	}
 			
-	// postorder(node)
-	// Performs postorder traversal of a tree
-	postorder(node)
+	// postOrder(node)
+	// Performs postOrder traversal of a tree
+	postOrder(node)
 	{
 		if(node !== null)
 		{
-			this.postorder(node.left)
-			this.postorder(node.right)
+			this.postOrder(node.left)
+			this.postOrder(node.right)
 			console.log(node.data)
 		}
 	}
@@ -258,7 +267,7 @@ BST.insert(27)
 var root = BST.getRootNode()
 			
 // prints 5 7 9 10 13 15 17 22 25 27
-BST.inorder(root)
+BST.inOrder(root)
 			
 // Removing node with no children
 BST.remove(5)
@@ -276,7 +285,7 @@ BST.remove(5)
 var root = BST.getRootNode()
 			
 // prints 7 9 10 13 15 17 22 25 27
-BST.inorder(root)
+BST.inOrder(root)
 			
 // Removing node with one child
 BST.remove(7)
@@ -293,7 +302,7 @@ BST.remove(7)
 var root = BST.getRootNode()
 
 // prints 9 10 13 15 17 22 25 27
-BST.inorder(root)
+BST.inOrder(root)
 			
 // Removing node with two children
 BST.remove(15)
@@ -305,13 +314,16 @@ BST.remove(15)
 //	 9 13 22 27
 
 var root = BST.getRootNode()
-console.log("inorder traversal")
+console.log("inOrder traversal")
 
 // prints 9 10 13 17 22 25 27
-BST.inorder(root)
+BST.inOrder(root)
 			
-console.log("postorder traversal")
-BST.postorder(root)
-console.log("preorder traversal")
-BST.preorder(root)
+console.log("postOrder traversal")
+BST.postOrder(root)
+console.log("preOrder traversal")
+BST.preOrder(root)
+
+console.log('maxNode = ', BST.findMaxNode())
+console.log('minNode = ', BST.displayMinNode())
 

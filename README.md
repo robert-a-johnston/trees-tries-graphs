@@ -118,3 +118,7 @@ simple undirected graph
   - right subtree of a node has nodes with keys > the node's key
   - left and right subtree each must also be a binary search tree
   - no duplicate nodes
+## Search Tree Average Time Complexity
+  |Tree Type|Search|Insertion|Deletion|
+  |---------|------|---------|--------|
+  |BST|O(log(n))|O(log(n))|O(log(n))|
